@@ -1,0 +1,253 @@
+
+/*sale div*/
+@media screen and (max-width : 400px ) {
+
+    .sale-div{
+        background-color: tomato;
+      }
+        
+    .sale-div h2 {
+        margin: 0;
+        top: 18%;
+        text-align: center;
+      }
+      
+      .sale-div p {
+        margin-top: 15px;
+        font-size: 15px;
+        
+      }
+    .sale-div button{
+        margin: 0;
+        padding: 5px 10px;
+        top: 90%;
+        font-size: 12px;
+        font-weight: bold;
+
+    }
+
+    .category-item img{
+        width: 30px;
+        height: auto; 
+     
+    }
+    .category-item span{
+        font-size: 12px;
+    }
+
+    .category-item .dropbtn{
+        font-size: 12px;
+        position: relative;
+    }
+
+    .category-item {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    #navbarScroll input{
+        width: 300px;
+        margin-left: 7px;
+        }
+
+        #navbarScroll button{
+            padding: 0px;
+            margin: 0px;
+            padding: 0px 10px;          
+
+        }
+
+       .category-item .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 100px;
+            margin-top: 0;
+            overflow: auto;
+        
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .category-item .dropdown-content a {
+            font-size: 12px;
+            padding: 5px 5px;
+        
+        }
+
+
+        .category-item #home {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 100px;
+            top :25%;
+            margin-left: -45px;
+            overflow: auto;
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .category-item #home a{
+            font-size: 12px;
+            padding: 5px 5px;
+        }
+
+        .category-item #toys {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 100px;
+            top :25%;
+            margin-left: -100px;
+            overflow: auto;
+            box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .category-item #toys a{
+            font-size: 12px;
+            padding: 5px 5px;
+        }
+
+/* banner cursor media*/
+        .owl-prev span {
+
+            font-size: 25px;
+            font-weight: bold;
+            width: 15px;
+            position: absolute;
+            top: 25%;
+            text-align: center;
+            padding: 5px 5px;
+            left: 0;
+        }
+
+        .owl-next span {
+            font-size: 25px;
+            font-weight: bold;
+            width: 15px;
+            position: absolute;
+            top: 25%;
+            text-align: center;
+            padding: 5px 5px;
+            right: 0;
+        }
+    
+    
+
+
+            
+        }
+
+
+    /*payment option media*/
+
+@media screen and (max-width : 1400px) {
+
+    .payavail img{
+        width: 270px;
+        height: auto;
+        margin-left: 40px;
+        
+    }
+    
+}
+
+@media screen and (max-width : 1260px) {
+
+    .payavail img{
+        width: 200px;
+        height: auto;
+        margin-left: 30px;
+        
+    }
+    
+}
+
+@media screen and (max-width : 1110px) {
+
+    .payavail img{
+        width: 220px;
+        height: auto;
+        margin-left: 15px;
+       
+    }
+
+    
+}
+@media screen and (max-width : 1110px) {
+
+    .payavail img{
+        width: 180px;
+        height: auto;
+        margin-left: 45px;
+       
+    }
+.payavail{
+    height: 180px;
+}
+    
+}
+
+@media screen and (max-width : 770px) {
+
+    .payavail img{
+        width: 130px;
+        height: auto;
+        margin-left: 25px;
+       
+    }
+    .payavail{
+        height:130px;
+
+    }
+
+    
+}
+@media screen and (max-width : 380px) {
+
+    .payavail img{
+        width: 60px;
+        height: auto;
+        margin-left: 15px;
+       
+    }
+    .payavail{
+        height:100px;
+
+    }
+
+    #footimg img{
+        width: 280px;
+        margin-top: 10px;
+        
+    }
+
+    
+}
+@media screen and (max-width : 442px) {
+
+    .payavail img{
+        width: 60px;
+        height: auto;
+        margin-left: 15px;
+       
+    }
+    .payavail{
+        height:100px;
+
+    }
+
+
+
+}
+
+
+
+
+
+

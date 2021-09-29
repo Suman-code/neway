@@ -1,0 +1,129 @@
+{% extends 'myapp/main.html' %}
+
+{% load static %}
+{% block title %} <title>Login</title> {% endblock title %}
+{% block main %}
+<div class="container-fluid mt-4">
+    <div class="row">
+
+        <div class="col-sm-3   bg-white py-1" style="margin-left: 75px;">
+            <img src="" alt=".." class="img-thumbnail">
+            <h4>Welcom</h4>
+            <h6>{{ request.user }}</h6>
+            <hr>
+            <div style="cursor: pointer;"><i class="fas fa-sort-amount-up-alt float-start text-primary">
+                </i>
+                <h6 class="text-muted ms-4">MY ORDERS <i class="fas fa-chevron-right float-end"></i></h6>
+            </div>
+            <hr>
+
+            <div class="py-3"><i class="fas fa-user-alt float-start text-primary">
+                </i>
+                <h6 class="text-muted ms-4"> ACCOUNT SETTING</h6>
+
+                <ul class="ms-2 list-group list-group-flush mt-4">
+
+                    <a href="#" class="list-group-item list-group-item-action">Profile Information</a>
+                    <a href="{% url 'manage-address' %} " class="list-group-item list-group-item-action"
+                        target="_self">Manage Address</a>
+                    <a href="#" class="list-group-item list-group-item-action">KYC Information</a>
+                </ul>
+            </div>
+
+            <div class="py-3"><i class="fas fa-money-check-alt float-start text-primary"></i>
+                <h6 class="text-muted" style="margin-left: 30px;">PAYMENTS</h6>
+
+                <ul class="ms-2 list-group list-group-flush mt-4">
+
+                    <a href="#" class="list-group-item list-group-item-action">Gifts</a>
+                    <a href="#" class="list-group-item list-group-item-action">Bonus Cards</a>
+                    <a href="#" class="list-group-item list-group-item-action">UIP Card</a>
+                </ul>
+            </div>
+
+            <div class="py-3"><i class="fas fa-user-lock float-start text-primary fs-5"></i>
+                <h6 class="text-muted" style="margin-left: 33px;">MY STUFFS</h6>
+
+                <ul class="ms-2 list-group list-group-flush mt-4">
+
+                    <a href="#" class="list-group-item list-group-item-action">Notifications</a>
+                    <a href="#" class="list-group-item list-group-item-action">My Wishlist</a>
+                    <a href="#" class="list-group-item list-group-item-action">My Coupons</a>
+                </ul>
+            </div>
+
+            <div class="py-3"><i class="fas fa-power-off text-primary float-start fs-5"></i>
+                <a href="{% url 'login' %}" class="text-muted ms-3"
+                    style="text-decoration: none; font-weight: bold;">LOGOUT</a>
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-8  ms-4 bg-white offset-sm-1">
+            <h5 class="mt-4">Personal Information <a href="#" class="ms-4 text-info fs-6">Edit</a> </h6>
+                <form>
+                    <fieldset disabled>
+
+                        <div class="mb-3 mt-3 d-flex">
+                            <label for="disabledTextInput" class="form-label"></label>
+                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Ashish"
+                                style="width: 20vw;">
+                            <input type="text" id="disabledTextInput" class="form-control ms-3" placeholder="Ashish"
+                                style="width: 20vw;">
+
+                        </div>
+
+                        <div class="mb-3 mt-5">
+                            <h5 class="mt-4">Email Address<a href="#" class="ms-4 text-info fs-6">Edit</a> </h6>
+                                <label for="disabledTextInput" class="form-label"></label>
+                                <input type="text" id="disabledTextInput" class="form-control"
+                                    placeholder="ashish@gmail.com" style="width: 20vw;">
+
+                        </div>
+
+                        <div class="mb-3 mt-5">
+                            <h5 class="mt-4">Mobile Number<a href="#" class="ms-4 text-info fs-6">Edit</a> </h6>
+                                <label for="disabledTextInput" class="form-label"></label>
+                                <input type="text" id="disabledTextInput" class="form-control" placeholder="9954182817"
+                                    style="width: 20vw;">
+
+                        </div>
+
+                </form>
+
+                <div class="mt-5">
+
+
+                    <h5 class="mt5 mb-3">FAQs</h5>
+
+                    <h6>What happens when I update my email address (or mobile number)?</h6>
+                    <p>
+                        Your login email id (or mobile number) changes, likewise. You'll receive all your account
+                        related
+                        communication on your updated email address (or mobile number).</p>
+
+                    <h6>When will my neway account be updated with the new email address (or mobile number)?</h6>
+                    <p>It happens as soon as you confirm the verification code sent to your email (or mobile) and save
+                        the changes.</p>
+
+                    <h6>What happens to my existing neway account when I update my email address (or mobile number)?
+                    </h6>
+                    <p>Updating your email address (or mobile number) doesn't invalidate your account. Your account
+                        remains fully functional.
+                        You'll continue seeing your Order history, saved information and personal details.</p>
+
+                    <h6>Does my Seller account get affected when I update my email address?</h6>
+                    <p>neway has a 'single sign-on' policy. Any changes will reflect in your Seller account also.</p>
+
+
+                    </p>
+                </div>
+
+
+
+        </div>
+
+    </div>
+
+    {% endblock main %}

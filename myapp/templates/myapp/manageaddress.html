@@ -1,0 +1,128 @@
+{% extends 'myapp/main.html' %}
+
+{% load static %}
+{% block title %} <title>Manage-address</title> {% endblock title %}
+
+{% block main %}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+
+        <div class="col-sm-3   bg-white py-1" style="margin-left: 75px;">
+            <img src="" alt=".." class="img-thumbnail">
+            <h4>Welcom</h4>
+            <h6>{{ request.user }}</h6>
+            <hr>
+            <div style="cursor: pointer;"><i class="fas fa-sort-amount-up-alt float-start text-primary">
+                </i>
+                <h6 class="text-muted ms-4">MY ORDERS <i class="fas fa-chevron-right float-end"></i></h6>
+            </div>
+            <hr>
+
+            <div class="py-3"><i class="fas fa-user-alt float-start text-primary">
+                </i>
+                <h6 class="text-muted ms-4"> ACCOUNT SETTING</h6>
+
+                <ul class="ms-2 list-group list-group-flush mt-4">
+
+                    <a href="#" class="list-group-item list-group-item-action">Profile Information</a>
+                    <a href="{% url 'manage-address' %} " class="list-group-item list-group-item-action"
+                        target="_self">Manage Address</a>
+                    <a href="#" class="list-group-item list-group-item-action">KYC Information</a>
+                </ul>
+            </div>
+
+            <div class="py-3"><i class="fas fa-money-check-alt float-start text-primary"></i>
+                <h6 class="text-muted" style="margin-left: 30px;">PAYMENTS</h6>
+
+                <ul class="ms-2 list-group list-group-flush mt-4">
+
+                    <a href="#" class="list-group-item list-group-item-action">Gifts</a>
+                    <a href="#" class="list-group-item list-group-item-action">Bonus Cards</a>
+                    <a href="#" class="list-group-item list-group-item-action">UIP Card</a>
+                </ul>
+            </div>
+
+            <div class="py-3"><i class="fas fa-user-lock float-start text-primary fs-5"></i>
+                <h6 class="text-muted" style="margin-left: 33px;">MY STUFFS</h6>
+
+                <ul class="ms-2 list-group list-group-flush mt-4">
+
+                    <a href="#" class="list-group-item list-group-item-action">Notifications</a>
+                    <a href="#" class="list-group-item list-group-item-action">My Wishlist</a>
+                    <a href="#" class="list-group-item list-group-item-action">My Coupons</a>
+                </ul>
+            </div>
+
+            <div class="py-3"><i class="fas fa-power-off text-primary float-start fs-5"></i>
+                <a href="{% url 'login' %}" class="text-muted ms-3"
+                    style="text-decoration: none; font-weight: bold;">LOGOUT</a>
+
+            </div>
+        </div>
+
+        <div class="col-sm-7  ms-4 bg-white offset-sm-1">
+            <div>
+
+
+
+                <h5 class="mt-4 mb-3">Manage Address</h5>
+                <ul class="list-group mb-4">
+                    <a href="{% url 'add-address' %}" class="list-group-item text-primary"><i
+                            class="fas fa-plus me-3 text-primary"></i> ADD NEW ADDRESS</a>
+
+                </ul>
+
+
+                {% for ad in addres %}
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="adres-dropdown-div">
+                            <button class=" adres-dropbtn"><i class="fas fa-ellipsis-v "></i></button>
+
+                            <div class="adres-dropdown-content">
+
+                                <a href="{% url 'update-user-address' ad.id %}">Edit</a>
+                                {% for fm in usradd %}
+
+                                <form method="POST" action="{% url 'delete-user-address' fm.id %}" novalidate>
+                                    {%csrf_token %}
+
+                                    {% endfor %}
+
+                                    <input type="submit" value="Delete" class="btn btn-sm btn-light">
+                                </form>
+
+
+
+                            </div>
+                        </div>
+
+                        <h4 class="">Address {{ forloop.counter }} </h4>
+                        <span>
+                            <p style="font-size: 15px;"> {{ ad.first_name }} {{ ad.last_name }} {{ ad.mobile_number }}
+                            </p>
+                        </span>
+
+                        <p style="font-size: 13px;">{{ ad.area_and_street}}</p>
+                        <span>
+                            <p style="font-size: 13px;"> {{ ad.landmark }} {{ ad.city}} {{ ad.state}} {{ ad.pincode}}
+                            </p>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {% endblock main %}

@@ -1,0 +1,319 @@
+{% extends 'myapp/main.html' %}
+
+{% load static %}
+
+{% block title %} <title>Home</title> {% endblock %}
+
+{% block category %}
+
+
+<div class="container-fluid">
+  <div class="row bg-white overflow-auto">
+
+    <div class="col-sm-12 xs-12  d-flex justify-content-center align-items-center">
+      <div class="category-item ms-0">
+        <img src="{% static 'media/images/category/offer.jpg' %}" alt="offer" width="50px" height="50px"><br>
+        <span>Top offers</span>
+
+      </div>
+
+      <div class="category-item ms-4">
+        <img src="{% static 'media/images/category/grocery.jpg' %}" alt="offer" width="50px" height="50px"><br>
+        <span>Grocery</span>
+
+      </div>
+
+      <a class="text-decoration-none text-dark" href="{% url 'mobiles' %}">
+        <div class="category-item ms-4">
+          <img src="{% static 'media/images/category/mobile.jpg' %}" alt="mobile" width="50px" height="50px"><br>
+          <span>Mobiles</span>
+
+        </div>
+      </a>
+
+      <div class="category-item ms-4">
+        <img src="{% static 'media/images/category/fashion.jpg' %}" alt="fashion" width="50px" height="50px"><br>
+        <button class="dropbtn">Fashion <i class="fas fa-angle-down"></i></button>
+
+
+        <div class="dropdown-content">
+          <a href="#">Women</a>
+          <a href="#">Men</a>
+          <a href="#">Kids</a>
+        </div>
+      </div>
+
+
+      <div class="category-item ms-4">
+
+        <img src="{% static 'media/images/category/elc.jpg' %}" alt="fashion" width="55px" height="50px"><br>
+        <button class="dropbtn">Electronics<i class="fas fa-angle-down"></i></button>
+
+        <div class="dropdown-content">
+          <a href="#">Camera & accessories</a>
+          <a href="#">Sound & accessories </a>
+          <a href="#">Gaming</a>
+          <a href="#">TV & accessories</a>
+          <a href="#">Laptop & desktop</a>
+          <a href="#">Mobile accessories</a>
+        </div>
+
+      </div>
+
+      <div class="category-item ms-4">
+
+        <img src="{% static 'media/images/category/hom.jpg' %}" alt="fashion" width="50px" height="50px"><br>
+        <button class="dropbtn">Home<i class="fas fa-angle-down"></i></button>
+
+        <div class="dropdown-content" id="home">
+          <a href="#">Living Room</a>
+          <a href="#">Dining Room</a>
+          <a href="#">Kitchen</a>
+          <a href="#">Home Decot</a>
+          <a href="#">Tools & Utility</a>
+          <a href="#">Lighting & Desing</a>
+          <a href="#">Cleaning & Bath</a>
+          <a href="#">Rest Room tools</a>
+        </div>
+      </div>
+
+      <div class="category-item ms-4">
+
+        <img src="{% static 'media/images/category/kid.jpg' %}" alt="fashion" width="50px" height="50px"><br>
+        <button class="dropbtn">Beauty Toys & more<i class="fas fa-angle-down"></i></button>
+
+        <div class="dropdown-content" id="toys">
+          <a href="#">Books & music</a>
+          <a href="#">Men's Grooming</a>
+          <a href="#">Women's Grooming</a>
+          <a href="#">Kid's Toys</a>
+          <a href="#">Face Makeup</a>
+          <a href="#">Eye Makeup</a>
+          <a href="#">Lip Makeup</a>
+          <a href="#">Hair Care</a>
+          <a href="#">Baby Care</a>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock category %}
+
+{% block banner %}
+
+<div class="owl-carousel mt-1">
+
+  <div class="item"><img src="{% static 'media/images/banner/b1.jpg' %}" alt="img1"></div>
+  <div class="item"><img src="{% static 'media/images/banner/b2.jpg' %}" alt="img1"></div>
+  <div class="item"><img src="{% static 'media/images/banner/b3.jpg' %}" alt="img1"></div>
+  <div class="item"><img src="{% static 'media/images/banner/b4.jpg' %}" alt="img1"></div>
+
+
+</div>
+
+{% endblock banner %}
+
+<!--sale on live banner-->
+
+{% block sale %}
+<div class="container">
+  <div class="sale-div mb-3">
+    <h2 class="mb-2">SALE IS LIVE NOW</h2><br>
+    <p>5% instance discount on Axis bank credit & debit card pay less buy more</p>
+    <button class="mb-2">Buy Now</button>
+
+  </div>
+</div>
+
+
+{% endblock sale %}
+
+<!--Display products slider -->
+
+{% block products %}
+
+<div class="view-all">
+
+  <h3 style="margin-left: 20px;">Shop bottom wear </h3>
+  <span>Start from <i class="fas fa-rupee-sign"></i> 199</span>
+  <button>VIEW ALL</button>
+  <hr>
+
+  <div class="owl-carousel" id="slider1">
+    {% for b in bottomwear %}
+    <a href="{% url 'product-detail' b.id %}" class="text-decoration-none text-muted">
+      <div class="item">
+        <figure>
+          <img src="{{ b.product_image.url }}" alt="img1" width="200px" height="240px">
+          <div class="text-center">
+
+            <figcaption class="text-center">{{ b.title }}</figcaption>
+            <span style="text-align: center;">Price {{ b.discounted_price }}</span>
+        </figure>
+
+      </div>
+    </a>
+
+    {% endfor %}
+
+
+  </div>
+
+</div>
+
+<!--Payment options-->
+
+<div class="d-flex container-fluid">
+  <div class="col-sm-12 payavail">
+    <h3>Easy payment </h3>
+    <img src="{% static 'media/images/payavail/bj.jpg' %}">
+    <img src="{% static 'media/images/payavail/nb.jpg' %}">
+    <img src="{% static 'media/images/payavail/upi.jpg' %}">
+    <img src="{% static 'media/images/payavail/cod.jpg' %}">
+
+  </div>
+</div>
+
+
+
+
+
+<!--Topware products dispaly-->
+
+<div class="view-all">
+
+  <h3 style="margin-left: 20px;margin-top: 10PX;">Shop Top wear </h3>
+  <span>Start from <i class="fas fa-rupee-sign"></i> 199</span>
+  <button>VIEW ALL</button>
+  <hr>
+
+  <div class="owl-carousel" id="slider2">
+
+    {% for t in topwear %}
+    <a href="{% url 'product-detail' t.id %}" class="text-decoration-none text-muted">
+      <div class="item">
+        <figure>
+          <img src="{{ t.product_image.url }}" alt="img1" width="200px" height="240px">
+          <div class="text-center">
+
+            <figcaption>{{ t.title }}</figcaption>
+            <span style="text-align: center;">Price {{ t.discounted_price}}</span>
+        </figure>
+
+
+      </div>
+    </a>
+
+    {% endfor %}
+
+  </div>
+
+</div>
+
+<!--Deal of the day products dispaly-->
+
+<div class="view-all">
+
+  <h3 style="margin-left: 20px;margin-top: 10PX;">Deal of the day </h3>
+  <span>Start from <i class="fas fa-rupee-sign"></i> 199</span>
+  <button>VIEW ALL</button>
+  <hr>
+
+  <div class="owl-carousel" id="slider3">
+    {% for d in dealoftheday %}
+    <a href="{% url 'product-detail' d.id %}" class="text-decoration-none text-muted">
+      <div class="item">
+        <figure>
+          <img src="{{ d.product_image.url }}" alt="img1" width="200px" height="240px">
+          <div class="text-center">
+
+            <figcaption>{{ d.title}}</figcaption>
+            <span style="text-align: center;">Price {{ d.discounted_price}}</span>
+        </figure>
+      </div>
+    </a>
+    {% endfor %}
+
+
+  </div>
+
+</div>
+<!--trending offers products dispaly-->
+
+<div class="view-all">
+
+  <h3 style="margin-left: 20px;margin-top: 10PX;">Trending Offers </h3>
+  <span>Start from <i class="fas fa-rupee-sign"></i> 299</span>
+  <button>VIEW ALL</button>
+  <hr>
+
+  <div class="owl-carousel" id="slider4">
+
+    {% for tn in trending %}
+
+    <a href="{% url 'product-detail' tn.id %}" class="text-decoration-none text-muted">
+
+      <div class="item">
+        <figure>
+          <img src="{{tn.product_image.url }}" alt="img1" width="200px" height="240px">
+          <div class="text-center">
+
+            <figcaption>{{ tn.title }}</figcaption>
+            <span style="text-align: center;">Price {{ tn.discounted_price}}</span>
+        </figure>
+      </div>
+    </a>
+
+    {% endfor %}
+  </div>
+</div>
+
+<!--mobiles deal-->
+<div class="view-all">
+
+  <h3 style="margin-left: 20px;margin-top: 10PX;">Mobiles Offers </h3>
+  <span>Start from <i class="fas fa-rupee-sign"></i> 2999</span>
+  <button>VIEW ALL</button>
+  <hr>
+
+  <div class="owl-carousel" id="slider5">
+
+    {% for m in mobiles %}
+
+    <a href="{% url 'product-detail' m.id %}" class="text-decoration-none text-muted">
+
+      <div class="item">
+        <figure>
+          <img src="{{m.product_image.url }}" alt="img1" width="200px" height="240px">
+          <div class="text-center">
+
+            <figcaption>{{ m.title }}</figcaption>
+            <span style="text-align: center;">Price {{ m.discounted_price}}</span>
+        </figure>
+      </div>
+    </a>
+
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+{% endblock products %}
+
+</main>
+
+
+{% block main %}
+
+{% endblock main %}

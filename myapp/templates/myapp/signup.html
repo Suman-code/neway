@@ -1,0 +1,57 @@
+{% extends 'myapp/main.html' %}
+
+{% load static %}
+{% block title %} <title>Signup</title> {% endblock title %}
+
+{% block main %}
+
+<div class="container">
+
+    <div class="row my-3">
+
+        <div class="col-sm-6 offset-sm-3">
+
+            <hr>
+            <form class="shadow p-5" action="" method="POST" novalidate> {% csrf_token %}
+                <h4>For new user registration</h4>
+
+                {% if messages %}
+                {% for message in messages %}
+                <p {% if message.tag %} {% endif %} class="py-2" style="background-color:rgb(159, 238, 159)"> {{
+                    message}} </p>
+
+
+                {% endfor %}
+                {% endif %}
+
+
+                {% for fm in form %}
+                <div class=" form-group mt-3">
+                    {{ fm.label_tag }} {{ fm }} <small class="text-danger">{{ fm.errors | striptags}}</small>
+
+
+                    {% endfor %}
+                    <input type="submit" class="btn btn-primary mt-3">
+                </div>
+                <div class="text-center fw-bold text-primary"> Existing User ? <a href="{% url 'login' %}"
+                        class="text-danger">Login here</a></div>
+
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock main %}

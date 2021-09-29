@@ -1,0 +1,73 @@
+{% extends 'myapp/main.html' %}
+
+{% load static %}
+{% block title %} <title>Mobile-page</title> {% endblock title %}
+
+{% block main %}
+<div class="container">
+    <h1 class="mt-4 mb-4">Top mobiles offers</h1>
+
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'media/images/mobilepage/mobi4.jpg' %}" class=" img-fluid"
+                style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 600px; height: auto;">
+        </div>
+        <div class="col">
+            <img src="{% static 'media/images/mobilepage/mobi3.jpg' %}" class="img-fluid"
+                style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 600px; height: 100%;">
+        </div>
+    </div>
+
+</div>
+
+<div class="container  mt-3">
+    <div class="row ms-0">
+        <div class="col-sm-2 bg-white mt-2" style="height: 50vh;">
+            <h4>Filters</h4>
+            <hr>
+            <a href="{% url 'mobiles'  %}" class="mobilefilter">All mobiles</a>
+            <hr>
+            <a href="{% url 'mobiledata' 'apple' %}" class="mobilefilter">Apple</a>
+            <hr>
+            <a href="{% url 'mobiledata' 'samsung' %}" class="mobilefilter">Samsung</a>
+            <hr>
+            <a href="{% url 'mobiledata' 'nokia' %}" class="mobilefilter">Nokia</a>
+            <hr>
+
+
+
+        </div>
+
+
+        <div class="col-sm-10 d-flex flex-wrap">
+            {% for product in mobiles %}
+
+            <div class="card ms-3 mt-2" style="width: 18rem;">
+                <a href="{% url 'product-detail' product.id %}" class=" btn">
+                    <img src="{{ product.product_image.url }}" class="card-img-top" alt="...">
+                    <hr>
+                    <div class="card-body">
+                        <h6>{{ product.title }}</h6>
+                        <p><i class="fas fa-rupee-sign me-1"></i>{{ product.discounted_price }}</p>
+                        <small class="text-decoration-line-through"><i
+                                class="fas fa-rupee-sign fa-sm text-decoration-line-through"></i>{{ product.selling_price }}</small>
+
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock main %}
